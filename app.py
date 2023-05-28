@@ -48,3 +48,6 @@ def questions():
 	response = get_questions(captions, question)
 	return response
 
+# Run the app
+if __name__ == "__main__":
+    app.run()
