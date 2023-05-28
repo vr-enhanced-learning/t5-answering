@@ -38,3 +38,13 @@ def update():
         return render_template("./success.html", token=new_token)
     return render_template("./update.html", token=new_token)
 
+@app.route("/answer", methods=['GET'])
+def questions():
+	videoId = request.args.get('videoId')
+	if videoId is None: return "No videoId provided"
+    
+	question = request.args.get('question')
+	captions = requests.get("https://youtube-questions.vercel.app/captions?youtubeVideoId=" + videoId).text
+	response = get_questions(captions, question)
+	return response
+
