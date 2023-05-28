@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="/static/styles.css">
+	<title>Update Token</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<img src="/static/token.png" alt="token image" height="100" width="100">
+		<h1>Update Token</h1>
+		<p>Current token: {{ token }}</p>
+		<form action="/update" method="post">
+			<input type="text" name="new_token" placeholder="New token">
+			<input type="submit" value="Update">
+		</form>
+	</div>
+</body>
+
+</html>
