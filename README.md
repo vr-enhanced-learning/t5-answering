@@ -22,3 +22,6 @@ For example, if you enter the YouTube video ID for "How to Make a Paper Airplane
 What is the best way to fold a paper airplane that will fly the farthest?
 
 You can also update the TURB API token by visiting the /update endpoint.
+
+### Start command 
+```gunicorn -c gunicorn.conf.py app:app```
