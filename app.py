@@ -26,3 +26,15 @@ CORS(app)
 @app.route("/")
 def index():
     return "Hello, world!"
+
+@app.route("/update", methods=['GET', 'POST'])
+def update():
+    global bard_token
+    new_token = bard_token
+    if request.method == 'POST':
+        print(request.form['new_token'])
+        new_token = request.form['new_token']
+        bard_token = new_token
+        return render_template("./success.html", token=new_token)
+    return render_template("./update.html", token=new_token)
+
