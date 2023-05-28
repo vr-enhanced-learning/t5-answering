@@ -13,3 +13,16 @@ def get_questions(captions, question):
     return response
     
 
+# Create a Flask app
+app = Flask(__name__, static_url_path='/static', template_folder='web/templates')
+
+app.static_folder = 'static'
+
+# Enable CORS for all origins
+CORS(app)
+
+
+# Define a GET endpoint
+@app.route("/")
+def index():
+    return "Hello, world!"
