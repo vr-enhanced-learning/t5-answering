@@ -10,7 +10,9 @@ def get_questions(captions, question):
     bard = Bard(token=bard_token, timeout=30)
     prompt = captions + "\n\Answer in a single sentence. Don't add filler words. Just be precise.\n\n" + question
     response = bard.get_answer(prompt)['content']
-    return response
+    start_index = response.index(":") + 2
+    passage = response[start_index:]
+    return passage
     
 
 # Create a Flask app
